@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPfromENG-A1-Lev1-Lecc6: Greeting and saying goodbye</title>
+    <link rel="stylesheet" href="../../../css/styles.css">
+</head>
+
+<body>
+
+    <div id="logoOnTop">
+        <img src="../../../images/logo.png" alt="">
+    </div>
+
+    <div id="backButton">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <div id="contentContainer">
+        <div class="dynamicScreen">
+
+            <!-- Writing exercise -->
+            <div id="writingExercise" class="onScreenMessage">
+                <h2>Writing Practice</h2>
+                <h3 id="activityGuidelines">A1: Imagine you're in an online chat and meeting someone for the first time. Write a short dialogue (between 10 and 20 words) where you introduce yourself and a friend. Use an informal tone.</h3>
+                <textarea id="studentWriting" placeholder="Write your paragraph here..."></textarea>
+                <button class="defaultButton" onclick="submitWriting()">
+                    <h3>Submit</h3>
+                </button>
+                <button class="backToLessonsSelector defaultButton">
+                    <h3>Back to Lessons</h3>
+                </button>
+                <div id="errorMessage" style="display:none; color: red;">
+                    <h3>Please ensure your text is between 10 and 20 words.</h3>
+                </div>
+                <div id="responseMessage" style="display:none;">
+                    <h3>IA Response:</h3>
+                    <p id="iaResponse"></p>
+                    <button class="onClickActivateNextDiv defaultButton">
+                        <h3>Next</h3>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Final congratulations screen -->
+            <div class="lessonCompleted onScreenMessage">
+                <h2>Congratulations!</h2>
+                <h3>You have completed the writing practice. You earned 10 Sparks!</h3>
+                <button class="backToLessonsSelector defaultButton">
+                    <h3>Back to Lessons</h3>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dock">
+        <div id="heartsContainer">
+            <img src="../../../images/pinkHeart.png" alt="Heart 1">
+            <img src="../../../images/pinkHeart.png" alt="Heart 2">
+            <img src="../../../images/pinkHeart.png" alt="Heart 3">
+        </div>
+        <div id="virtualPet">
+            <button id="petButton">
+                <img src="../../../images/petLogo.png" alt="Pet Logo">
+            </button>
+        </div>
+        <div id="streakCounter">
+            <img src="../../../images/burningFire.png" alt="Streak Icon">
+            <h3 id="streakAmount">50</h3>
+        </div>
+        <div id="sparksCounter">
+            <img src="../../../images/sparks.png" alt="Sparks Icon">
+            <h3 id="sparksAmount">500</h3>
+        </div>
+    </div>
+
+    <script src="../../../js/dynamicScreen.js"></script>
+    <script src="../../../js/writingExercise.js"></script>
+    <script src="../../../js/esEnProgress.js"></script>
+    <script src="../../../js/streakTracker.js"></script>
+    <script src="../../../js/sparksTracker.js"></script>
+    <script src="../../../js/lifesTracker.js"></script>
+    <script src="../../../js/multipleChoiceExercise.js"></script>
+    <script src="../../../js/lessonCompleted.js"></script>
+    <script src="../../../js/soundsManager.js"></script>
+    <script src="../../../js/buttonRoutes.js"></script>
+    <script src="../../../js/sparky.js"></script>
+    <script src="../../../js/petInfo.js"></script>
+</body>
+
+</html>

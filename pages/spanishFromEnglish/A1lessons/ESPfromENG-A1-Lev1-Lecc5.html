@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPfromENG-A1-Lev1-Lecc5</title>
+    <link rel="stylesheet" href="../../../css/styles.css">
+</head>
+
+<body>
+
+    <div id="logoOnTop">
+        <img src="../../../images/logo.png" alt="">
+    </div>
+
+    <div id="backButton">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <div id="contentContainer">
+        <div class="dynamicScreen">
+
+            <!-- First audio exercise -->
+            <div class="onScreenMessage">
+                <h2>Audio Exercise 1</h2>
+                <button class="defaultButton" onclick="playAudio('audio1')">
+                    <h3>Listen to the audio</h3>
+                </button>
+                <audio id="audio1" src="../../../audios/ESPfromENG-A1/audio1.mp3"></audio>
+                
+                <h3>Question: What does Ana say to Juan?</h3>
+                <button class="defaultButton onClickCorrectAnswer">
+                    <h3>How are you?</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>Good morning.</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>See you later.</h3>
+                </button>
+
+                <button class="defaultButton" onclick="toggleVisibility('transcript1')">
+                    <h3>See the Spanish transcript</h3>
+                </button>
+
+                <div id="transcript1" style="display:none;">
+                    <h3><strong>Transcript in Spanish:</strong></h3>
+                    <h3>Ana: Hola, Juan. ¿Cómo estás?</h3>
+
+                    <button class="defaultButton" onclick="toggleVisibility('translation1')">
+                        <h3>See the English translation</h3>
+                    </button>
+
+                    <div id="translation1" style="display:none;">
+                        <h3><strong>Translation in English:</strong></h3>
+                        <h3>Ana: Hi, Juan. How are you?</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second audio exercise -->
+            <div class="onScreenMessage">
+                <h2>Audio Exercise 2</h2>
+                <button class="defaultButton" onclick="playAudio('audio2')">
+                    <h3>Listen to the audio</h3>
+                </button>
+                <audio id="audio2" src="../../../audios/ESPfromENG-A1/audio2.mp3"></audio>
+
+                <h3>Question: What is Pedro's response?</h3>
+                <button class="defaultButton onClickCorrectAnswer">
+                    <h3>I'm fine, thank you.</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>My name is Pedro.</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>See you soon.</h3>
+                </button>
+
+                <button class="defaultButton" onclick="toggleVisibility('transcript2')">
+                    <h3>See the Spanish transcript</h3>
+                </button>
+
+                <div id="transcript2" style="display:none;">
+                    <h3><strong>Transcript in Spanish:</strong></h3>
+                    <h3>Pedro: Estoy bien, gracias.</h3>
+
+                    <button class="defaultButton" onclick="toggleVisibility('translation2')">
+                        <h3>See the English translation</h3>
+                    </button>
+
+                    <div id="translation2" style="display:none;">
+                        <h3><strong>Translation in English:</strong></h3>
+                        <h3>Pedro: I'm fine, thank you.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final congratulations screen -->
+            <div class="lessonCompleted onScreenMessage">
+                <h2>Congratulations!</h2>
+                <h3>You have completed the listening exercises. You earned 10 Sparks!</h3>
+                <button class="backToLessonsSelector defaultButton">
+                    <h3>Back to Lessons</h3>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dock">
+        <div id="heartsContainer">
+            <img src="../../../images/pinkHeart.png" alt="Heart 1">
+            <img src="../../../images/pinkHeart.png" alt="Heart 2">
+            <img src="../../../images/pinkHeart.png" alt="Heart 3">
+        </div>
+        <div id="virtualPet">
+            <button id="petButton">
+                <img src="../../../images/petLogo.png" alt="Pet Logo">
+            </button>
+        </div>
+        <div id="streakCounter">
+            <img src="../../../images/burningFire.png" alt="Streak Icon">
+            <h3 id="streakAmount">49</h3>
+        </div>
+        <div id="sparksCounter">
+            <img src="../../../images/sparks.png" alt="Sparks Icon">
+            <h3 id="sparksAmount">490</h3>
+        </div>
+    </div>
+
+    <script src="../../../js/dynamicScreen.js"></script>
+    <script src="../../../js/audioExercise.js"></script>
+    <script src="../../../js/esEnProgress.js"></script>
+    <script src="../../../js/streakTracker.js"></script>
+    <script src="../../../js/sparksTracker.js"></script>
+    <script src="../../../js/lifesTracker.js"></script>
+    <script src="../../../js/multipleChoiceExercise.js"></script>
+    <script src="../../../js/lessonCompleted.js"></script>
+    <script src="../../../js/soundsManager.js"></script>
+    <script src="../../../js/buttonRoutes.js"></script>
+    <script src="../../../js/sparky.js"></script>
+    <script src="../../../js/petInfo.js"></script>
+</body>
+
+</html>
+

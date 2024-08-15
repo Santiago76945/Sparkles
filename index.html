@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="dynamicScreen">
+        <div class="onScreenMessage">
+            <img src="images/logo.png" alt="30px">
+            <h2>Welcome to Sparkles!</h2>
+            <h3>It's so nice to see you. Today, it's a very special day; you are going on a journey to learn a new
+                language. How exciting!</h3>
+            <button class="defaultButton onClickActivateNextDiv">
+                <h3>Let's go!</h3>
+            </button>
+        </div>
+
+        <div class="onScreenMessage">
+            <img src="images/logo.png" alt="Logo">
+            <h2>What is your name?</h2>
+            <input type="text" id="userName" placeholder="Enter your name" name="userName">
+            <!-- Campo para escribir el nombre del usuario -->
+            <h3>We have a surprise for you! Today, a lovely baby virtual Dalmatian was born, and he is going to be your
+                companion. Let's give him a name, shall we?</h3>
+            <img src="images/motherAndPuppies.png" alt="A Dalmatian mother with her puppies">
+            <input type="text" id="petName" placeholder="Enter your pet's name" name="petName">
+            <!-- Campo para escribir el nombre del perro -->
+
+            <!-- Mensaje de advertencia -->
+            <p id="warningMessage" style="color: red; font-size: 0.9rem; display: none;">
+                Please fill in both fields to continue.
+            </p>
+
+            <button id="submitButton" class="defaultButton onClickActivateNextDiv" disabled>
+                <h3>All set</h3>
+            </button>
+        </div>
+
+        <div class="onScreenMessage">
+            <img src="images/logo.png" alt="30px">
+            <h2>Select a language:</h2>
+            <img src="images/spanishFlag.webp" alt="30px"><br>
+            <button id="spanishFromEnglishButton" class="defaultButton">
+                <h3>English to Spanish</h3>
+            </button>
+        </div>
+    </div>
+    <script src="js/dynamicScreen.js"></script>
+    <script src="js/buttonRoutes.js"></script>
+    <script src="js/userSelections.js"></script>
+    <script src="js/playerInfo.js"></script>
+    <script src="js/petInfo.js"></script>
+    <script src="js/inputField.js"></script>
+    <script src="js/soundsManager.js"></script>
+    <script src="js/welcomeScreen.js"></script>
+</body>
+
+</html>

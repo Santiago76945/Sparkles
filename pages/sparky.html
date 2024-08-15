@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+    <div id="logoOnTop">
+        <img src="../../images/logo.png" alt="">
+    </div>
+
+    <div id="backButton">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+    
+
+    <div id="sparkyScreen" class="sparky-container">
+        <div class="sparky-image-container">
+            <img id="sparkyHouse" src="/images/Sparky/sparkyHouse.png" alt="Sparky's House">
+            <img id="sparkyImg" src="/images/Sparky/sparkyAge1.png" alt="Sparky">
+            
+            <!-- Both bowl images -->
+            <img id="sparkyBowlEmpty" src="/images/Sparky/dogBowlEmpty.png" alt="Sparky's Bowl" style="display: block;">
+            <img id="sparkyBowlFull" src="/images/Sparky/dogBowlFull.png" alt="Sparky's Bowl" style="display: none;">
+        </div>
+        <div class="sparky-text-container">
+            <h2 id="sparkyGreeting">[petName] is happy to see you!</h2>
+            <p id="sparkyMessage" class="onScreenMessage">[petName] didn’t eat today! Complete a lesson to feed him.</p>
+            <p id="sparkyFeedCount" class="feed-count">[petName] has been fed [number] times!</p>
+        </div>
+        <button style="font-size: 16px;">🎵</button>
+    </div>
+    
+
+    <div id="dock">
+        <div id="heartsContainer">
+            <img src="../../images/pinkHeart.png" alt="Heart 1">
+            <img src="../../images/pinkHeart.png" alt="Heart 2">
+            <img src="../../images/pinkHeart.png" alt="Heart 3">
+        </div>
+        <div id="virtualPet">
+            <button id="petButton">
+                <img src="../../images/petLogo.png" alt="Pet Logo">
+            </button>
+        </div>
+        <div id="streakCounter">
+            <img src="../../images/burningFire.png" alt="Streak Icon">
+            <h3 id="streakAmount">45</h3>
+        </div>
+        <div id="sparksCounter">
+            <img src="../../images/sparks.png" alt="Sparks Icon">
+            <h3 id="sparksAmount">450</h3>
+        </div>
+    </div>
+
+    <script src="../../js/dynamicScreen.js"></script>
+    <script src="../../js/esEnProgress.js"></script>
+    <script src="../../js/streakTracker.js"></script>
+    <script src="../../js/sparksTracker.js"></script>
+    <script src="../../js/lifesTracker.js"></script>
+    <script src="../../js/buttonRoutes.js"></script>
+    <script src="../../js/petInfo.js"></script>
+    <script src="../../js/sparky.js"></script>
+    <script src="../../js/dailyMessage.js"></script>
+    <script src="../../js/soundsManager.js"></script>
+</body>
+
+</html>

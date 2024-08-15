@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+p {
+    font-size: 18px;
+}
+
+body {
+    background-image: url('../images/croppedBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+    background-attachment: fixed; /* Fija la imagen de fondo */
+}
+
+.dynamicScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* padding-top: 150px; Distancia mínima desde el borde superior */
+    box-sizing: border-box;
+}
+
+.onScreenMessage {
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo negro con 75% de transparencia */
+    padding: 20px;
+    width: 90%;
+    max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
+    color: white;
+    border-radius: 10px; /* Bordes redondeados */
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 20px; /* Asegura espacio adicional si es necesario */
+}
+
+
+.onScreenMessage img {
+    max-width: 150px;
+    /* Ajusta el tamaño de la imagen */
+    margin-bottom: 20px;
+}
+
+.onScreenMessage h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.onScreenMessage h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.defaultButton {
+    background: linear-gradient(90deg, #8f9bb3, #f5b5cb);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 20px; /* Añade margen inferior para separar los botones */
+}
+
+.defaultButton:hover {
+    transform: scale(1.05);
+}
+
+.defaultButton h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+
+#dock {
+    position: fixed;
+    /* Posición fija para que el dock siempre esté visible */
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    /* Color blanco con 75% de opacidad */
+    border: 2px solid white;
+    /* Bordes blancos */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    padding: 10px 20px;
+    /* Espaciado interno para los íconos */
+    display: flex;
+    /* Utilizar flexbox para la distribución de los íconos */
+    justify-content: space-between;
+    /* Espacio uniforme entre los grupos de íconos */
+    align-items: center;
+    /* Centrar los íconos verticalmente */
+    height: 70px;
+    /* Altura suficiente para contener los íconos */
+    z-index: 1000;
+    /* Asegura que el dock esté por encima de otros elementos */
+}
+
+#heartsContainer {
+    display: flex;
+    align-items: center;
+}
+
+#heartsContainer img {
+    margin-right: 5px;
+    /* Espacio entre los corazones */
+    height: 30px;
+    /* Ajusta la altura del ícono (reducido en un 25%) */
+}
+
+#streakCounter,
+#sparksCounter {
+    display: flex;
+    align-items: center;
+}
+
+#streakCounter img,
+#sparksCounter img {
+    margin-right: 5px;
+    /* Espacio entre el ícono y el número */
+    height: 22.5px;
+    /* Ajusta la altura del ícono (reducido en un 25%) */
+}
+
+#streakCounter h3,
+#sparksCounter h3 {
+    margin: 0;
+    font-size: 1.7rem;
+    /* Tamaño de fuente del contador (reducido en un 25%) */
+    color: black;
+    /* Color del texto */
+}
+
+#virtualPet {
+    display: flex;
+    align-items: center;
+}
+
+#petButton {
+    background: none;
+    /* Sin fondo para el botón */
+    border: none;
+    /* Sin borde para el botón */
+    padding: 0;
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+}
+
+#petButton img {
+    height: 37.5px;
+    /* Tamaño del logo de la mascota (reducido en un 25%) */
+}
+
+
+input[type="text"] {
+    width: 80%;
+    /* Ancho del campo de texto */
+    padding: 10px;
+    /* Espaciado interno */
+    margin: 10px 0;
+    /* Margen superior e inferior */
+    font-size: 1rem;
+    /* Tamaño del texto */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Bordes con transparencia */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo con ligera transparencia */
+    color: white;
+    /* Color del texto */
+    outline: none;
+    /* Sin borde azul al hacer clic */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    text-align: center;
+    /* Alinear el texto al centro */
+    transition: all 0.3s ease;
+    /* Suavizar las transiciones */
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    /* Color del placeholder */
+    font-size: 0.9rem;
+    /* Tamaño del texto del placeholder */
+}
+
+input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Cambia el fondo al hacer clic */
+    border-color: rgba(255, 255, 255, 0.8);
+    /* Cambia el color del borde al hacer clic */
+}
+
+#logoOnTop {
+    position: fixed;
+    /* Posición fija para que permanezca en la misma posición incluso al hacer scroll */
+    top: 60px;
+    /* Distancia fija desde la parte superior de la pantalla */
+    left: 50%;
+    /* Centrar horizontalmente */
+    transform: translateX(-50%);
+    /* Ajustar el centrado debido al uso de left: 50% */
+    z-index: 1000;
+    /* Asegura que esté por encima de otros elementos */
+    width: 200px;
+    /* Ancho de la imagen, ajustable según tus necesidades */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+}
+
+#logoOnTop img {
+    width: 100%;
+    /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+}
+
+/* Estilo para botones no disponibles que se aplicará desde JavaScript */
+.notAvailableStyle {
+    background: linear-gradient(90deg, #d3d3d3, #e6e6e6); /* Degradado en blanco y negro */
+    color: #a0a0a0; /* Color del texto gris */
+    cursor: not-allowed; /* Cursor de no permitido */
+}
+
+.lessonSelectorContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+    overflow-y: hidden; /* Ocultar cualquier desbordamiento vertical del contenedor */
+}
+
+.lessonSelector {
+    width: 100%;
+    max-width: 600px;
+    max-height: 65vh; /* Altura máxima del contenedor de lecciones */
+    overflow-y: auto; /* Habilita el scroll vertical dentro de esta área */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.level {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.level img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid #4CAF50; /* Círculo verde alrededor de la imagen */
+}
+
+.levelInfo {
+    flex-grow: 1;
+}
+
+.levelInfo h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1c1c1e; /* Texto principal */
+}
+
+.lessons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.lessons button {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius:10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    color: #1c1c1e;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.lessons button:hover {
+    background-color: #e0e0e0;
+}
+
+.level:before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 70px;
+    bottom: -30px;
+    width: 2px;
+    background-color: #4CAF50; /* Línea verde entre los niveles */
+}
+
+.level:last-child:before {
+    bottom: 50%;
+}
+
+.defaultVideo {
+    width: 30%; /* Ajusta el ancho del video al 80% del contenedor */
+    max-width: 600px; /* Ancho máximo del video */
+    margin: 20px auto; /* Centra el video y añade margen superior e inferior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición al hacer hover */
+}
+
+.defaultVideo:hover {
+    transform: scale(1.02); /* Agranda ligeramente el video al pasar el cursor */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Aumenta la sombra en hover */
+}
+
+/* Estilo para el contenedor principal que aloja la dynamicScreen */
+#contentContainer {
+    position: relative;
+    max-width: 90%;
+    max-height: 70vh; /* Mantiene la altura máxima al 70% del viewport */
+    margin: 80px auto 90px auto;
+    overflow-y: auto; /* Asegura que el scroll vertical esté disponible */
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Asegura que el contenido comience desde arriba */
+}
+
+.dynamicScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    min-height: 50%; /* Establece una altura mínima */
+}
+
+.correctAnswerStyle {
+    background: linear-gradient(90deg, #66bb6a, #a5d6a7); /* Degradado verde */
+    color: white !important; /* Asegura que el texto sea visible sobre el fondo verde */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    line-height: 1.2;
+}
+
+.incorrectAnswerStyle {
+    background: linear-gradient(90deg, #e57373, #ef9a9a); /* Degradado rojo */
+    color: white; /* Asegura que el texto sea visible sobre el fondo rojo */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    line-height: 1.2;
+    margin: 10px;
+}
+
+.correctAnswerStyle h3, 
+.incorrectAnswerStyle h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: inherit;
+    color: inherit; /* Heredar el color del botón */
+}
+
+.sparky-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    border-radius: 15px; /* Bordes redondeados */
+    height: 70%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    position: absolute; /* Cambiado a absolute para permitir centrar */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado absoluto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.sparky-image-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Alinea las imágenes en la parte inferior del contenedor */
+    justify-content: center;
+    width: 100%;
+    height: 300px; /* Altura fija para las imágenes */
+}
+
+#sparkyHouse {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* La caseta ocupa casi todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 1;
+}
+
+#sparkyImg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50%; /* Sparky ocupa el 50% de la altura del contenedor */
+    z-index: 2; /* Sparky está sobre la caseta */
+    bottom: -30px;
+}
+
+#sparkyBowlEmpty {
+    position: absolute;
+    bottom: 0;
+    right: 15%; /* Posicionamos el tazón a un lado de Sparky */
+    height: 25%; /* Ajustamos la altura del tazón */
+    z-index: 3; /* El tazón está sobre Sparky */
+}
+
+#sparkyBowlFull {
+    position: absolute;
+    bottom: 0;
+    right: 15%; /* Posicionamos el tazón a un lado de Sparky */
+    height: 25%; /* Ajustamos la altura del tazón */
+    z-index: 3; /* El tazón está sobre Sparky */
+}
+
+.sparky-text-container {
+    text-align: center; /* Centrando el texto horizontalmente */
+    width: 100%; /* Asegura que el contenedor de texto ocupe todo el ancho disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente los elementos de texto */
+    align-items: center; /* Centra horizontalmente los elementos de texto */
+    margin-top: 20px; /* Añade espacio entre las imágenes y el texto */
+}
+
+#sparkyGreeting {
+    font-size: 1.5rem;
+    color: #4CAF50; /* Color verde */
+    margin-bottom: 10px;
+    width: 100%; /* Asegura que el saludo ocupe todo el ancho disponible */
+    text-align: center; /* Alinea el texto en el centro */
+}
+
+.feed-count {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    width: 100%; /* Asegura que el contador de alimentación ocupe todo el ancho disponible */
+    text-align: center; /* Alinea el texto en el centro */
+}
+
+#backButton {
+    position: absolute;
+    top: 20px; /* Distancia desde la parte superior de la pantalla */
+    left: 20px; /* Distancia desde la parte izquierda de la pantalla */
+    background-color: transparent; /* Fondo transparente para un estilo minimalista */
+    font-size: 1rem; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Sin subrayado en el texto */
+    padding: 5px 10px; /* Espaciado interno para que sea fácil de hacer clic */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    border: 1px solid #333; /* Borde para que el botón sea visible */
+    z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+#backButton a {
+    color: inherit; /* Usa el mismo color del contenedor */
+    text-decoration: none; /* Sin subrayado en el enlace */
+}
+
+#backButton:hover {
+    background-color: #333; /* Fondo al pasar el mouse por encima */
+    color: #fff; /* Cambia el color del texto al pasar el mouse por encima */
+}
+
+/* Estilo específico para el ejercicio de escritura */
+#writingExercise .onScreenMessage {
+    padding: 30px;
+    width: 95%;
+    max-width: 700px; /* Incrementa el ancho máximo */
+}
+
+#writingExercise textarea#studentWriting {
+    width: 90%; /* Reduce el ancho al 90% para evitar el desbordamiento */
+    max-width: 100%; /* Asegura que no exceda el 100% del contenedor */
+    height: 120px; /* Ajuste de la altura para mantener una proporción adecuada */
+    font-size: 1.2rem;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    outline: none;
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+}
+
+#writingExercise .onScreenMessage {
+    padding: 30px;
+    width: 95%;
+    max-width: 600px; /* Ajusta el ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor */
+}
+
+
+#writingExercise #responseMessage {
+    font-size: 1rem; /* Reduce el tamaño de la fuente */
+    text-align: left; /* Alinea el texto a la izquierda para facilitar la lectura */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+#writingExercise #responseMessage h3 {
+    font-size: 1.2rem; /* Ajuste menor al tamaño de la fuente del encabezado */
+}
+
+#writingExercise #responseMessage p {
+    font-size: 1rem; /* Tamaño más pequeño para el texto */
+    color: #ddd; /* Color gris claro para menos énfasis */
+}
+
+#speakingExercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    text-align: center;
+}
+
+#speakingExercise .defaultButton {
+    margin-top: 20px; /* Añadir un margen superior para separar del contenido anterior */
+}
+
+
+
+
