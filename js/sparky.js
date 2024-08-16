@@ -1,21 +1,32 @@
 // sparky.js
 
+// Function to check if lessonCompleted div is visible
+function isLessonCompletedVisible() {
+    const lessonCompletedDiv = document.querySelector('.lessonCompleted');
+    return lessonCompletedDiv && lessonCompletedDiv.offsetParent !== null;
+}
+
+// Function to get the current date in YYYY-MM-DD format
+function obtenerFechaActual() {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+}
+
 // Function to feed Sparky if a lesson was completed today
 function alimentarSparky() {
     const petName = getPetName(); // Get the pet's name from localStorage
     const displayName = petName || 'Your Pet'; // Default name if not set
 
     // Replace [petName] placeholders in the HTML with the daily message
-    document.getElementById("sparkyGreeting").innerHTML = `Sparky says:<br>${window.dailyMessage}`;
+    document.getElementById("sparkyGreeting").innerHTML = `${displayName} says:<br>${window.dailyMessage}`;
 
     let sparkyFedCount = parseInt(localStorage.getItem('sparkyFedCount')) || 0;
     const today = obtenerFechaActual();
 
     let lastFedDate = localStorage.getItem('lastFedDate');
-    let lessonCompletedDate = localStorage.getItem('lessonCompletedDate');
 
-    // Check if a lesson was completed today
-    if (lessonCompletedDate === today) {
+    // Check if the lessonCompleted div is visible
+    if (isLessonCompletedVisible()) {
         // Check if Sparky has been fed today
         if (lastFedDate !== today) {
             // Feed Sparky for the first time today
@@ -41,6 +52,7 @@ function alimentarSparky() {
             document.getElementById("sparkyBowlEmpty").style.display = "none";
 
             document.getElementById("sparkyMessage").textContent = `${displayName} has eaten today! He is getting stronger every day.`;
+            console.log("Sparky has been fed!");
         } else {
             // Sparky has already been fed today
             document.getElementById("sparkyMessage").textContent = `${displayName} has already eaten today! Come back tomorrow.`;
@@ -64,3 +76,4 @@ function alimentarSparky() {
 
 // Run the function when the page loads
 document.addEventListener('DOMContentLoaded', alimentarSparky);
+
