@@ -4,8 +4,7 @@ const buttons = document.querySelectorAll('.defaultButton');
 // Añade un evento de click a cada botón
 buttons.forEach(button => {
     button.addEventListener('click', function() {
-        // Remueve la clase 'defaultButton' para eliminar el degradado
-        button.classList.remove('defaultButton');
+        // Mantén la clase 'defaultButton' para no perder el degradado
 
         if (button.classList.contains('onClickCorrectAnswer')) {
             // Añadir la clase de fondo verde si la respuesta es correcta
@@ -17,5 +16,6 @@ buttons.forEach(button => {
         }
     });
 });
+
 
 
