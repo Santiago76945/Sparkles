@@ -12,31 +12,37 @@ const createBokehBackground = () => {
 
     const ctx = canvas.getContext('2d');
     const bokehCircles = [];
-    const numCircles = 50;
+    const numCircles = 45; // Reducido el número de círculos
 
     // Crear círculos de bokeh inicialmente
     for (let i = 0; i < numCircles; i++) {
         bokehCircles.push(createCircle());
     }
 
-    // Función para crear un círculo de bokeh
     function createCircle() {
-        const radius = Math.random() * 170 + 30;  // Radio entre 30 y 200
+        // Generar colores más saturados
+        const r = Math.floor(Math.random() * 106 + 150);  // Rojo entre 150 y 255
+        const g = Math.floor(Math.random() * 106 + 150);  // Verde entre 150 y 255
+        const b = Math.floor(Math.random() * 106 + 150);  // Azul entre 150 y 255
+        
         return {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            radius: radius,
-            dx: (Math.random() - 0.5) * 0.1,  // Movimiento en x, 5 veces más lento
-            dy: (Math.random() - 0.5) * 0.1,  // Movimiento en y, 5 veces más lento
-            color: `rgba(255, 255, 255, 0.2)`, // Color blanco con opacidad fija al 20%
+            radius: (Math.random() * 40 + 10),  // Radio más pequeño
+            alpha: Math.random() * 0.01 + 0.1, // Transparencia entre 0.1% y 1%
+            dx: (Math.random() - 0.5) * 0.17,  // Movimiento en x a un tercio de la velocidad original
+            dy: (Math.random() - 0.5) * 0.17,  // Movimiento en y a un tercio de la velocidad original
+            color: `${r}, ${g}, ${b}`  // Color más saturado
         };
     }
-
+    
     // Función para dibujar un círculo de bokeh
     function drawCircle(circle) {
         ctx.beginPath();
         ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2, false);
-        ctx.fillStyle = circle.color; // Usamos el color con opacidad fija
+        ctx.fillStyle = `rgba(${circle.color}, ${circle.alpha})`;
+        ctx.shadowColor = `rgba(${circle.color}, ${circle.alpha})`;
+        ctx.shadowBlur = 15;
         ctx.fill();
     }
 
@@ -68,4 +74,5 @@ const createBokehBackground = () => {
 };
 
 window.addEventListener('load', createBokehBackground);
+
 

@@ -25,6 +25,11 @@ def serve_page(page):
 def serve_css(filename):
     return send_from_directory('css', filename)
 
+@app.route('/audios/<path:page>')
+def serve_audios(page):
+    # Sirve cualquier página dentro de la carpeta 'pages'
+    return send_from_directory('audios', page)
+
 @app.route('/fonts/<path:filename>')
 def serve_fonts(filename):
     return send_from_directory('fonts', filename)

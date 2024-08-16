@@ -27,10 +27,10 @@
                 <button class="defaultButton" onclick="playAudio('audio1')">
                     <h3>Listen to the audio</h3>
                 </button>
-                <audio id="audio1" src="../../../audios/ESPfromENG-A1/audio1.mp3"></audio>
-                
+                <audio id="audio1" src="/audios/ESPfromENG/A1/ESPfromENG-A1-Lev1-Lecc5-Audio1.mp3"></audio>
+
                 <h3>Question: What does Ana say to Juan?</h3>
-                <button class="defaultButton onClickCorrectAnswer">
+                <button class="defaultButton onClickCorrectAnswer onClickActivateNextDiv">
                     <h3>How are you?</h3>
                 </button>
                 <button class="defaultButton onClickIncorrectAnswer">
@@ -65,14 +65,14 @@
                 <button class="defaultButton" onclick="playAudio('audio2')">
                     <h3>Listen to the audio</h3>
                 </button>
-                <audio id="audio2" src="../../../audios/ESPfromENG-A1/audio2.mp3"></audio>
+                <audio id="audio2" src="/audios/ESPfromENG/A1/ESPfromENG-A1-Lev1-Lecc5-Audio2.mp3"></audio>
 
-                <h3>Question: What is Pedro's response?</h3>
-                <button class="defaultButton onClickCorrectAnswer">
+                <h3>Question: What is Juan's response?</h3>
+                <button class="defaultButton onClickCorrectAnswer onClickActivateNextDiv">
                     <h3>I'm fine, thank you.</h3>
                 </button>
                 <button class="defaultButton onClickIncorrectAnswer">
-                    <h3>My name is Pedro.</h3>
+                    <h3>My name is Juan.</h3>
                 </button>
                 <button class="defaultButton onClickIncorrectAnswer">
                     <h3>See you soon.</h3>
@@ -84,7 +84,7 @@
 
                 <div id="transcript2" style="display:none;">
                     <h3><strong>Transcript in Spanish:</strong></h3>
-                    <h3>Pedro: Estoy bien, gracias.</h3>
+                    <h3>Juan: Estoy bien, gracias.</h3>
 
                     <button class="defaultButton" onclick="toggleVisibility('translation2')">
                         <h3>See the English translation</h3>
@@ -92,10 +92,87 @@
 
                     <div id="translation2" style="display:none;">
                         <h3><strong>Translation in English:</strong></h3>
-                        <h3>Pedro: I'm fine, thank you.</h3>
+                        <h3>Juan: I'm fine, thank you.</h3>
                     </div>
                 </div>
             </div>
+
+            <!-- Third audio exercise -->
+            <div class="onScreenMessage">
+                <h2>Audio Exercise 3</h2>
+                <button class="defaultButton" onclick="playAudio('audio3')">
+                    <h3>Listen to the audio</h3>
+                </button>
+                <audio id="audio3" src="/audios/ESPfromENG/A1/ESPfromENG-A1-Lev1-Lecc5-Audio3.mp3"></audio>
+
+                <h3>Question: Who is Mariela?</h3>
+                <button class="defaultButton onClickCorrectAnswer onClickActivateNextDiv">
+                    <h3>She is Laura's mother.</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>She is Laura's sister.</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>She is Laura's friend.</h3>
+                </button>
+
+                <button class="defaultButton" onclick="toggleVisibility('transcript3')">
+                    <h3>See the Spanish transcript</h3>
+                </button>
+
+                <div id="transcript3" style="display:none;">
+                    <h3><strong>Transcript in Spanish:</strong></h3>
+                    <h3>Laura: Ella es mi madre. Se llama Mariela.</h3>
+
+                    <button class="defaultButton" onclick="toggleVisibility('translation3')">
+                        <h3>See the English translation</h3>
+                    </button>
+
+                    <div id="translation3" style="display:none;">
+                        <h3><strong>Translation in English:</strong></h3>
+                        <h3>Laura: She is my mother. Her name is Mariela.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth audio exercise -->
+            <div class="onScreenMessage">
+                <h2>Audio Exercise 4</h2>
+                <button class="defaultButton" onclick="playAudio('audio4')">
+                    <h3>Listen to the audio</h3>
+                </button>
+                <audio id="audio4" src="/audios/ESPfromENG/A1/ESPfromENG-A1-Lev1-Lecc5-Audio1.mp3"></audio>
+
+                <h3>Question: Who is Lucas?</h3>
+                <button class="defaultButton onClickCorrectAnswer onClickActivateNextDiv">
+                    <h3>He is Juan's friend from work.</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>He is Juan's brother.</h3>
+                </button>
+                <button class="defaultButton onClickIncorrectAnswer">
+                    <h3>He is Juan's cousin.</h3>
+                </button>
+
+                <button class="defaultButton" onclick="toggleVisibility('transcript4')">
+                    <h3>See the Spanish transcript</h3>
+                </button>
+
+                <div id="transcript4" style="display:none;">
+                    <h3><strong>Transcript in Spanish:</strong></h3>
+                    <h3>Juan: Él es Lucas, mi amigo del trabajo. Nos conocemos hace tres años.</h3>
+
+                    <button class="defaultButton" onclick="toggleVisibility('translation4')">
+                        <h3>See the English translation</h3>
+                    </button>
+
+                    <div id="translation4" style="display:none;">
+                        <h3><strong>Translation in English:</strong></h3>
+                        <h3>Juan: He is Lucas, my friend from work. We've known each other for three years.</h3>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Final congratulations screen -->
             <div class="lessonCompleted onScreenMessage">
@@ -146,4 +223,3 @@
 </body>
 
 </html>
-
