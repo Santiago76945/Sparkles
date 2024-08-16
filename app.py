@@ -1,27 +1,26 @@
 #app.py
 
 import io
-from flask import Flask, send_from_directory, request, jsonify
+from flask import Flask, send_from_directory, request, jsonify, render_template
 import openai
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, 
+            template_folder=".")  # Indica que las plantillas están en la raíz del proyecto
 
 # Configura tu clave de API de OpenAI
-openai.api_key = "tu_clave_de_api_aqui"
+openai.api_key = "tu clave de OpenAI"
 
 @app.route('/')
 def home():
-    return send_from_directory('.', 'index.html')
+    return render_template('index.html')  # Renderiza el index desde la carpeta raíz
 
-@app.route('/lesson6')
-def lesson6():
-    return send_from_directory('pages/spanishFromEnglish/A1lessons', 'ESPfromENG-A1-Lev1-Lecc6.html')
+@app.route('/pages/<path:page>')
+def serve_page(page):
+    # Sirve cualquier página dentro de la carpeta 'pages'
+    return send_from_directory('pages', page)
 
-@app.route('/lesson7')
-def lesson7():
-    return send_from_directory('pages/spanishFromEnglish/A1lessons', 'ESPfromENG-A1-Lev1-Lecc7.html')
-
-# Rutas para servir archivos estáticos
+# Rutas para servir archivos estáticos si no los moviste a la carpeta 'static'
 @app.route('/css/<path:filename>')
 def serve_css(filename):
     return send_from_directory('css', filename)
@@ -34,6 +33,10 @@ def serve_fonts(filename):
 def serve_images(filename):
     return send_from_directory('images', filename)
 
+@app.route('/sounds/<path:filename>')
+def serve_sounds(filename):
+    return send_from_directory('sounds', filename)
+
 @app.route('/js/<path:filename>')
 def serve_js(filename):
     return send_from_directory('js', filename)
@@ -41,6 +44,10 @@ def serve_js(filename):
 @app.route('/music/<path:filename>')
 def serve_music(filename):
     return send_from_directory('music', filename)
+
+@app.route('/videos/<path:filename>')
+def serve_videos(filename):
+    return send_from_directory('videos', filename)
 
 # Endpoint para el ejercicio de escritura
 @app.route('/submit-writing', methods=['POST'])
@@ -138,5 +145,6 @@ def submit_speaking():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
