@@ -5,6 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const unlockAllLevels = true; // Cambia a 'false' para desactivar el desbloqueo
     const demoMode = true; // Cambia a 'false' para desactivar el modo demo
 
+    // Obtener el conteo de vidas desde localStorage
+    let lifesCount = parseInt(localStorage.getItem('lifesCount')) || 0;
+
+    // Desactivar botones de lecciones si no hay vidas
+    if (lifesCount === 0) {
+        const lessonSelectorContainer = document.querySelector('.lessonSelectorContainer');
+        lessonSelectorContainer.innerHTML = '<p>You have no lives left. Please wait until they refresh at midnight.</p>';
+        return; // Detiene la ejecución si no hay vidas
+    }
+
     // Redirección para 'spanishFromEnglishButton'
     const spanishButton = document.getElementById('spanishFromEnglishButton');
     if (spanishButton) {
@@ -83,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 
 
 
