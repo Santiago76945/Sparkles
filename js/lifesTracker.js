@@ -4,7 +4,7 @@
 const mostrarBotonReinicio = true;
 
 // Booleana para mostrar información de debugging en pantalla
-const mostrarInformacionDebug = true;
+const mostrarInformacionDebug = false;
 
 // Inicializar la cantidad de vidas desde localStorage o en 3 si no existe un valor válido
 let lifesCount = parseInt(localStorage.getItem('lifesCount'));
