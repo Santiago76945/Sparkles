@@ -1,5 +1,5 @@
 // Booleano para activar el modo de testeo
-const modoTesteo = true; // Cambia esto a false para desactivar
+const modoTesteo = false; // Cambia esto a false para desactivar
 
 // Obtener el valor de la última lección completada desde localStorage
 let ultimaLeccionCompletada = localStorage.getItem('esEnUltimaLeccion') || '0';
