@@ -28,7 +28,7 @@ const createBokehBackground = () => {
         return {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            radius: (Math.random() * 40 + 10),  // Radio más pequeño
+            radius: (Math.random() * 80 + 10),  // Tamaño de los circulos
             alpha: Math.random() * 0.01 + 0.1, // Transparencia entre 0.1% y 1%
             dx: (Math.random() - 0.5) * 0.17,  // Movimiento en x a un tercio de la velocidad original
             dy: (Math.random() - 0.5) * 0.17,  // Movimiento en y a un tercio de la velocidad original

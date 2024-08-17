@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Esto es un template de una lección interactiva que sirve de introducción a un tema nuevo. Su objetivo principal es familiarizar a los estudiantes con las expresiones y frases clave. -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction lesson template</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div id="logoOnTop">
+        <img src="images/logo.png" alt="">
+    </div>
+
+    <div id="backButton">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <div id="contentContainer">
+        <div class="dynamicScreen">
+
+            <div class="onScreenMessage">
+                <h2>[Here goes the title of the level]</h2>
+                <h3>[A brief introduction to the topic and its importance]</h3>
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>Let's see</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <video class="defaultVideo" src="videos/ESPfromENG/A1/Introducing oneself and others.mov"
+                    controls></video>
+
+                <h2>Spanish transcription:</h2>
+
+                <h3>[There is a spanish explanatorie video and this is the transcription]</h3>
+
+                <h2>English translation:</h2>
+
+                <h3>[There is a spanish explanatorie video and this is the translation]</h3>
+
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>Got it</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>[Now a topic inside our big topic]</h2>
+                <h3><strong>[Title]</strong></h3>
+                <h3>[Content]</h3>
+                </h3>
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>All clear</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>[Question 1:]</h2>
+                <h3>[Question content]</h3>
+                <button class="onClickIncorrectAnswer defaultButton">
+                    <h3>[Incorrect]</h3>
+                </button>
+                <button class="onClickIncorrectAnswer defaultButton">
+                    <h3>[Correct]</h3>
+                </button>
+                <button class="onClickCorrectAnswer onClickActivateNextDiv defaultButton">
+                    <h3>[Incorrect]</h3>
+                </button>
+            </div>
+
+            <div class="lessonCompleted onScreenMessage">
+                <h2>Congratulations!</h2>
+                <h3>You won 10 Sparks! Your streak has increased, and your pet is proud of you.</h3>
+                <button class="backToLessonsSelector defaultButton">
+                    <h3>That's awesome!</h3>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dock">
+        <div id="heartsContainer">
+            <img src="/images/pinkHeart.png" alt="Heart 1">
+            <img src="/images/pinkHeart.png" alt="Heart 2">
+            <img src="/images/pinkHeart.png" alt="Heart 3">
+        </div>
+        <div id="virtualPet">
+            <button id="petButton">
+                <img src="/images/petLogo.png" alt="Pet Logo">
+            </button>
+        </div>        
+        <div id="streakCounter">
+            <img src="/images/burningFire.png" alt="Streak Icon">
+            <h3 id="streakAmount">45</h3>
+        </div>
+        <div id="sparksCounter">
+            <img src="/images/sparks.png" alt="Sparks Icon">
+            <h3 id="sparksAmount">450</h3>
+        </div>
+    </div>
+
+    <script src="/js/dynamicBackground.js"></script>
+    <script src="/js/dynamicScreen.js"></script>
+    <script src="/js/esEnProgress.js"></script>
+    <script src="/js/streakTracker.js"></script>
+    <script src="js/sparksTracker.js"></script>
+    <script src="js/lifesTracker.js" defer></script>
+    <script src="js/multipleChoiceExercise.js"></script>
+    <script src="js/lessonCompleted.js"></script>
+    <script src="js/soundsManager.js"></script>
+    <script src="js/buttonRoutes.js"></script>
+    <script src="js/sparky.js"></script>
+    <script src="js/petInfo.js"></script>
+</body>
+
+</html>
