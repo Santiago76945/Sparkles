@@ -1,0 +1,99 @@
+<!-- Esto es un template de una lección interactiva de opción múltiple. Su objetivo principal es evaluar la comprensión de los estudiantes sobre un tema específico a través de preguntas con varias opciones de respuesta. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice Lesson Template</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div id="logoOnTop">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+
+    <div id="backButton">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <div id="contentContainer">
+        <div class="dynamicScreen">
+
+            <div class="onScreenMessage">
+                <h2>[Lesson Title]</h2>
+                <h3>[Introduction to the topic covered in this lesson]</h3>
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>Let's start</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>[New Topic Introduction]</h2>
+                <h3>[Introduce the new topic or concept that the lesson focuses on]</h3>
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>Next</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>[Question Title]</h2>
+                <h3>[Question content]</h3>
+                <button class="onClickCorrectAnswer onClickActivateNextDiv defaultButton">
+                    <h3>[Correct Answer Option]</h3>
+                </button>
+                <button class="onClickIncorrectAnswer defaultButton">
+                    <h3>[Incorrect Answer Option]</h3>
+                </button>
+            </div>
+
+            <div class="lessonCompleted onScreenMessage">
+                <h2>[Lesson Completion Message]</h2>
+                <h3>[Congratulatory message and summary of the lesson]</h3>
+                <button class="backToLessonsSelector defaultButton">
+                    <h3>Finish</h3>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dock">
+        <div id="heartsContainer">
+            <img src="/images/pinkHeart.png" alt="Heart 1">
+            <img src="/images/pinkHeart.png" alt="Heart 2">
+            <img src="/images/pinkHeart.png" alt="Heart 3">
+        </div>
+        <div id="virtualPet">
+            <button id="petButton">
+                <img src="/images/petLogo.png" alt="Pet Logo">
+            </button>
+        </div>
+        <div id="streakCounter">
+            <img src="/images/burningFire.png" alt="Streak Icon">
+            <h3 id="streakAmount">[Streak Count]</h3>
+        </div>
+        <div id="sparksCounter">
+            <img src="/images/sparks.png" alt="Sparks Icon">
+            <h3 id="sparksAmount">[Sparks Count]</h3>
+        </div>
+    </div>
+
+    <script src="/js/dynamicBackground.js"></script>
+    <script src="/js/dynamicScreen.js"></script>
+    <script src="/js/esEnProgress.js"></script>
+    <script src="/js/streakTracker.js"></script>
+    <script src="/js/sparksTracker.js"></script>
+    <script src="/js/lifesTracker.js"></script>
+    <script src="/js/multipleChoiceExercise.js"></script>
+    <script src="/js/lessonCompleted.js"></script>
+    <script src="/js/soundsManager.js"></script>
+    <script src="/js/buttonRoutes.js"></script>
+    <script src="/js/sparky.js"></script>
+    <script src="/js/petInfo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!-- Esto es un template de una lección interactiva de práctica de speaking. Su objetivo principal es permitir que los estudiantes practiquen su habilidad para hablar en español, grabando su voz y recibiendo retroalimentación de una inteligencia artificial. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking Exercise: Introducing Yourself</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div id="logoOnTop">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+
+    <div id="backButton">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <div id="contentContainer">
+        <div class="dynamicScreen">
+
+            <!-- Speaking exercise -->
+            <div id="speakingExercise" class="onScreenMessage">
+                <h2>Speaking Practice</h2>
+                <h3 id="speakingGuidelines">[Guidelines for the speaking activity. For example: "Imagine you're at your new job meeting colleagues for the first time. Introduce yourself formally in a 5-second recording."]</h3>
+                <button id="recordButton" class="defaultButton" onclick="startRecording()">
+                    <h3>Start Recording</h3>
+                </button>
+                <button id="submitRecordingButton" class="defaultButton" style="display:none;" onclick="submitRecording()">
+                    <h3>Submit</h3>
+                </button>
+                <div id="recordingStatus" style="display:none; color: lightgreen;">
+                    <h3>Recording... Speak Now!</h3>
+                </div>
+                <div id="responseMessage" style="display:none;">
+                    <h3>AI Feedback:</h3>
+                    <p id="aiResponse"></p>
+                    <button class="onClickActivateNextDiv defaultButton">
+                        <h3>Next</h3>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Final congratulations screen -->
+            <div class="lessonCompleted onScreenMessage">
+                <h2>Congratulations!</h2>
+                <h3>You have completed the speaking practice. You earned 10 Sparks!</h3>
+                <button class="backToLessonsSelector defaultButton">
+                    <h3>Back to Lessons</h3>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dock">
+        <div id="heartsContainer">
+            <img src="/images/pinkHeart.png" alt="Heart 1">
+            <img src="/images/pinkHeart.png" alt="Heart 2">
+            <img src="/images/pinkHeart.png" alt="Heart 3">
+        </div>
+        <div id="virtualPet">
+            <button id="petButton">
+                <img src="/images/petLogo.png" alt="Pet Logo">
+            </button>
+        </div>
+        <div id="streakCounter">
+            <img src="/images/burningFire.png" alt="Streak Icon">
+            <h3 id="streakAmount">[Streak Count]</h3>
+        </div>
+        <div id="sparksCounter">
+            <img src="/images/sparks.png" alt="Sparks Icon">
+            <h3 id="sparksAmount">[Sparks Count]</h3>
+        </div>
+    </div>
+
+    <script src="/js/dynamicBackground.js"></script>
+    <script src="/js/dynamicScreen.js"></script>
+    <script src="/js/speakingExercise.js"></script>
+    <script src="/js/esEnProgress.js"></script>
+    <script src="/js/streakTracker.js"></script>
+    <script src="/js/sparksTracker.js"></script>
+    <script src="/js/lifesTracker.js"></script>
+    <script src="/js/multipleChoiceExercise.js"></script>
+    <script src="/js/lessonCompleted.js"></script>
+    <script src="/js/soundsManager.js"></script>
+    <script src="/js/buttonRoutes.js"></script>
+    <script src="/js/sparky.js"></script>
+    <script src="/js/petInfo.js"></script>
+</body>
+
+</html>

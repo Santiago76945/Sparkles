@@ -1,0 +1,118 @@
+<!-- Esto es un template de una lección interactiva de tipo True or False. Su objetivo principal es evaluar la comprensión de los estudiantes a través de preguntas que requieren una respuesta verdadera o falsa. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True or False Lesson Template</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div id="logoOnTop">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+
+    <div id="backButton">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <div id="contentContainer">
+        <div class="dynamicScreen">
+
+            <div class="onScreenMessage">
+                <h2>[Lesson Title]</h2>
+                <h3>[Introduction to the topic and what students will learn in this lesson]</h3>
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>Let's get started!</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>[Vocabulary Overview or Concept Introduction]</h2>
+                <h3>[Brief overview of vocabulary or key concepts relevant to the lesson]</h3>
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>Sounds good!</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>Activity 1:</h2>
+                <h3>[True or False statement related to the lesson's topic]</h3>
+                <button class="onClickCorrectAnswer onClickActivateNextDiv defaultButton">
+                    <h3>True</h3>
+                </button>
+                <button class="onClickIncorrectAnswer defaultButton">
+                    <h3>False</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>[Follow-up Information or Additional Context]</h2>
+                <h3>[Explanation or additional details that reinforce the lesson content]</h3>
+                <button class="defaultButton onClickActivateNextDiv">
+                    <h3>Next, please!</h3>
+                </button>
+            </div>
+
+            <div class="onScreenMessage">
+                <h2>Activity 2:</h2>
+                <h3>[Another True or False statement related to the lesson's topic]</h3>
+                <button class="onClickCorrectAnswer onClickActivateNextDiv defaultButton">
+                    <h3>True</h3>
+                </button>
+                <button class="onClickIncorrectAnswer defaultButton">
+                    <h3>False</h3>
+                </button>
+            </div>
+
+            <div class="lessonCompleted onScreenMessage">
+                <h2>Congratulations!</h2>
+                <h3>[Completion message, summarizing the lesson and encouraging students]</h3>
+                <button class="backToLessonsSelector defaultButton">
+                    <h3>Back to Lessons</h3>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="dock">
+        <div id="heartsContainer">
+            <img src="/images/pinkHeart.png" alt="Heart 1">
+            <img src="/images/pinkHeart.png" alt="Heart 2">
+            <img src="/images/pinkHeart.png" alt="Heart 3">
+        </div>
+        <div id="virtualPet">
+            <button id="petButton">
+                <img src="/images/petLogo.png" alt="Pet Logo">
+            </button>
+        </div>
+        <div id="streakCounter">
+            <img src="/images/burningFire.png" alt="Streak Icon">
+            <h3 id="streakAmount">[Streak Count]</h3>
+        </div>
+        <div id="sparksCounter">
+            <img src="/images/sparks.png" alt="Sparks Icon">
+            <h3 id="sparksAmount">[Sparks Count]</h3>
+        </div>
+    </div>
+
+    <script src="/js/dynamicBackground.js"></script>
+    <script src="/js/dynamicScreen.js"></script>
+    <script src="/js/esEnProgress.js"></script>
+    <script src="/js/streakTracker.js"></script>
+    <script src="/js/sparksTracker.js"></script>
+    <script src="/js/lifesTracker.js"></script>
+    <script src="/js/trueOrFalseExercise.js"></script>
+    <script src="/js/lessonCompleted.js"></script>
+    <script src="/js/soundsManager.js"></script>
+    <script src="/js/buttonRoutes.js"></script>
+    <script src="/js/sparky.js"></script>
+    <script src="/js/petInfo.js"></script>
+</body>
+
+</html>
