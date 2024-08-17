@@ -15,7 +15,7 @@ function updatePetNameInMessage() {
     const petName = getPetName(); // Recupera el nombre de la mascota correctamente
     const petNamePlaceholder = document.getElementById('petNamePlaceholder');
     
-    if (petName) {
+    if (petNamePlaceholder && petName) { // Verifica que el elemento y el nombre de la mascota existen
         petNamePlaceholder.textContent = petName;
     }
 }

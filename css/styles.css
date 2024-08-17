@@ -433,8 +433,8 @@ input[type="text"]:focus {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%; /* La caseta ocupa casi todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: auto; /* La caseta ocupa casi todo el ancho del contenedor */
+    height: 90%; /* Mantiene la proporción de la imagen */
     z-index: 1;
 }
 
@@ -465,7 +465,7 @@ input[type="text"]:focus {
 
 .sparky-text-container {
     text-align: center; /* Centrando el texto horizontalmente */
-    width: 100%; /* Asegura que el contenedor de texto ocupe todo el ancho disponible */
+    width: 80%; /* Asegura que el contenedor de texto ocupe todo el ancho disponible */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centra verticalmente los elementos de texto */
@@ -474,7 +474,7 @@ input[type="text"]:focus {
 }
 
 #sparkyGreeting {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #4CAF50; /* Color verde */
     margin-bottom: 10px;
     width: 100%; /* Asegura que el saludo ocupe todo el ancho disponible */
@@ -482,7 +482,7 @@ input[type="text"]:focus {
 }
 
 .feed-count {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
     margin-top: 10px;
     width: 100%; /* Asegura que el contador de alimentación ocupe todo el ancho disponible */

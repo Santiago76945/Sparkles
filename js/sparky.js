@@ -1,13 +1,5 @@
 // sparky.js
 
-// Function to check if lessonCompleted div is visible
-function isLessonCompletedVisible() {
-    const lessonCompletedDiv = document.querySelector('.lessonCompleted');
-    const isVisible = lessonCompletedDiv && lessonCompletedDiv.offsetParent !== null;
-    console.log("isLessonCompletedVisible:", isVisible);
-    return isVisible;
-}
-
 // Function to get the current date in YYYY-MM-DD format
 function obtenerFechaActual() {
     const today = new Date();
@@ -16,17 +8,21 @@ function obtenerFechaActual() {
     return formattedDate;
 }
 
-// Function to feed Sparky if a lesson was completed today
+// Function to feed Sparky when the feed button is clicked
 function alimentarSparky() {
     console.log("Starting alimentarSparky function...");
 
-    const petName = getPetName(); 
+    const petName = getPetName();
     console.log("Pet Name:", petName);
 
     const displayName = petName || 'Your Pet';
     console.log("Display Name:", displayName);
 
-    document.getElementById("sparkyGreeting").innerHTML = `${displayName} says:<br>${window.dailyMessage}`;
+    const sparkyGreetingElement = document.getElementById("sparkyGreeting");
+
+    if (sparkyGreetingElement) {
+        sparkyGreetingElement.innerHTML = `${displayName} says:<br>${window.dailyMessage}`;
+    }
 
     let sparkyFedCount = parseInt(localStorage.getItem('sparkyFedCount')) || 0;
     console.log("Initial sparkyFedCount:", sparkyFedCount);
@@ -38,15 +34,20 @@ function alimentarSparky() {
     // Si la fecha de la última alimentación es hoy, significa que Sparky ya ha sido alimentado hoy
     if (lastFedDate === today) {
         console.log("Sparky has already been fed today");
-        document.getElementById("sparkyMessage").textContent = `${displayName} has already eaten today! Come back tomorrow.`;
+        
+        const sparkyMessageElement = document.getElementById("sparkyMessage");
+        if (sparkyMessageElement) {
+            sparkyMessageElement.textContent = `${displayName} has already eaten today! Come back tomorrow.`;
+        }
 
-        // Mostrar el bowl lleno
-        document.getElementById("sparkyBowlFull").style.display = "block";
-        document.getElementById("sparkyBowlEmpty").style.display = "none";
-    } 
-    // Si el div lessonCompleted es visible y Sparky no ha sido alimentado hoy
-    else if (isLessonCompletedVisible()) {
-        console.log("Feeding Sparky for the first time today...");
+        const sparkyBowlFullElement = document.getElementById("sparkyBowlFull");
+        const sparkyBowlEmptyElement = document.getElementById("sparkyBowlEmpty");
+        if (sparkyBowlFullElement && sparkyBowlEmptyElement) {
+            sparkyBowlFullElement.style.display = "block";
+            sparkyBowlEmptyElement.style.display = "none";
+        }
+    } else {
+        console.log("Feeding Sparky...");
 
         // Incrementar el contador de alimentaciones
         sparkyFedCount++;
@@ -54,19 +55,13 @@ function alimentarSparky() {
         localStorage.setItem('lastFedDate', today);
 
         updateSparkyVisuals(sparkyFedCount, displayName);
-    } 
-    // Si la lección no se ha completado, mostrar el mensaje correspondiente
-    else {
-        console.log("Lesson not completed today, Sparky won't be fed");
-        document.getElementById("sparkyMessage").textContent = `${displayName} didn’t eat today! Complete a lesson to feed him.`;
-
-        // Mostrar el bowl vacío
-        document.getElementById("sparkyBowlFull").style.display = "none";
-        document.getElementById("sparkyBowlEmpty").style.display = "block";
     }
 
-    document.getElementById("sparkyFeedCount").textContent = `${displayName} has been fed ${sparkyFedCount} times!`;
-    console.log("Sparky feed count updated to:", sparkyFedCount);
+    const sparkyFeedCountElement = document.getElementById("sparkyFeedCount");
+    if (sparkyFeedCountElement) {
+        sparkyFeedCountElement.textContent = `${displayName} has been fed ${sparkyFedCount} times!`;
+        console.log("Sparky feed count updated to:", sparkyFedCount);
+    }
 }
 
 function updateSparkyVisuals(sparkyFedCount, displayName) {
@@ -81,20 +76,36 @@ function updateSparkyVisuals(sparkyFedCount, displayName) {
     } else if (sparkyFedCount >= 7) {
         sparkyImage = "/images/Sparky/sparkyAge2.png";
     }
-    document.getElementById("sparkyImg").src = sparkyImage;
-    console.log("Updated Sparky Image:", sparkyImage);
 
-    // Mostrar el bowl lleno
-    document.getElementById("sparkyBowlFull").style.display = "block";
-    document.getElementById("sparkyBowlEmpty").style.display = "none";
+    const sparkyImgElement = document.getElementById("sparkyImg");
+    if (sparkyImgElement) {
+        sparkyImgElement.src = sparkyImage;
+        console.log("Updated Sparky Image:", sparkyImage);
+    }
 
-    document.getElementById("sparkyMessage").textContent = `${displayName} has eaten today! He is getting stronger every day.`;
-    console.log("Sparky message updated to: Sparky has eaten today!");
+    const sparkyBowlFullElement = document.getElementById("sparkyBowlFull");
+    const sparkyBowlEmptyElement = document.getElementById("sparkyBowlEmpty");
+    if (sparkyBowlFullElement && sparkyBowlEmptyElement) {
+        sparkyBowlFullElement.style.display = "block";
+        sparkyBowlEmptyElement.style.display = "none";
+    }
+
+    const sparkyMessageElement = document.getElementById("sparkyMessage");
+    if (sparkyMessageElement) {
+        sparkyMessageElement.textContent = `${displayName} has eaten today! He is getting stronger every day.`;
+        console.log("Sparky message updated to: Sparky has eaten today!");
+    }
 }
 
-// Run the function when the page loads
+// Attach the alimentarSparky function to the button click event
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Document loaded, initializing...");
+
+    const feedButton = document.querySelector('.onClickFeedSparky');
+    if (feedButton) {
+        feedButton.addEventListener('click', alimentarSparky);
+    }
+
     alimentarSparky(); // Initial check in case the div is already visible on load
 });
 
