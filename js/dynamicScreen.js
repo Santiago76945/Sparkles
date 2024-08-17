@@ -1,3 +1,5 @@
+//dynamicScreen.js
+
 document.addEventListener('DOMContentLoaded', function() {
     // Selecciona todos los contenedores con la clase 'dynamicScreen'
     const dynamicScreens = document.querySelectorAll('.dynamicScreen');
